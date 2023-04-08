@@ -1,22 +1,20 @@
 import React, { useState } from "react";
+import { AppState } from "../AppState.js";
+import CarCard from "../components/CarCard.jsx";
 
 export default function HomePage() {
-  const [count, setCount] = useState(0)
+
+  const cars = [...AppState.cars]
+  
 
   return (
-    <div className="home-page">
-      <div className="container my-3">
-        <div className="row">
-          <div className="col-4">
-            <div className="card">
-              <div className="card-body">
-                <button className="btn btn-success my-1" onClick={() => setCount((count) => count + 1)}>
-                  count is {count}
-                </button>
-              </div>
-            </div>
-          </div>
+    <div className="container-fluid">
+      <div className="bricks">
+        {cars.map(car => (
+          <div key={car.id}>
+        <CarCard car={car}/>
         </div>
+          ))}
       </div>
     </div>
   )

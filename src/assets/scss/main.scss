@@ -43,10 +43,16 @@ form:invalid button[type="submit"] {
 
 .bricks{
   columns: 3;
+  &>div{
+    margin-bottom: 2em;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .bricks{
     columns: 5;
+    &>div{
+      margin-bottom: 2em;
+    }
   }
 }

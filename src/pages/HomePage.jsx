@@ -4,8 +4,7 @@ import CarCard from "../components/CarCard.jsx";
 
 export default function HomePage() {
 
-  const cars = [...AppState.cars]
-  
+  const [cars] = useState(AppState.cars)
 
   return (
     <div className="container-fluid">

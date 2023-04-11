@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import { observer } from 'mobx-react-lite';
+import React, { useEffect, useState } from "react";
 import { AppState } from "../AppState.js";
 import CarCard from "../components/CarCard.jsx";
+import { carsService } from "../services/CarsService.js";
+import Pop from "../utils/Pop.js";
 
-export default function HomePage() {
+  function HomePage() {
+
+    async function getCars(){
+      try {
+        await carsService.getCars()
+      }
+      catch (error){
+        Pop.error(error.message, 'Getting Cars');
+      }
+    }
+  
+    useEffect(() => {
+      getCars()
+    })
 
   const [cars] = useState(AppState.cars)
 
@@ -18,3 +34,4 @@ export default function HomePage() {
     </div>
   )
 }
+export default observer(HomePage)

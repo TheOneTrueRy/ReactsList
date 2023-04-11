@@ -44,7 +44,7 @@ form:invalid button[type="submit"] {
 .bricks{
   columns: 3;
   &>div{
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
   }
 }
 
@@ -52,7 +52,7 @@ form:invalid button[type="submit"] {
   .bricks{
     columns: 5;
     &>div{
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
     }
   }
 }
@@ -63,6 +63,7 @@ form:invalid button[type="submit"] {
 
 .absolute{
   position: absolute;
+  transform: translateY(-30px);
 }
 
 .text-shadow{

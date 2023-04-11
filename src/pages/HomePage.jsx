@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { AppState } from "../AppState.js";
 import CarCard from "../components/CarCard.jsx";
 import { carsService } from "../services/CarsService.js";
@@ -16,14 +16,14 @@ import Pop from "../utils/Pop.js";
       }
     }
   
-    useEffect(() => {
+    useEffect(()=>{
       getCars()
-    })
+    }, [])
 
-  const [cars] = useState(AppState.cars)
+  const cars = AppState.cars
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-2">
       <div className="bricks">
         {cars.map(car => (
           <div key={car.id}>

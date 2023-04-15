@@ -11,6 +11,8 @@ class ObservableAppState {
   /** @type {import('./models/Car.js').Car[]} */
 
   cars = []
+  houses = []
+  jobs = []
 
   constructor() {
     makeAutoObservable(this)

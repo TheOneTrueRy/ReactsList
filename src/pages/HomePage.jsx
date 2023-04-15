@@ -6,6 +6,8 @@ import { carsService } from "../services/CarsService.js";
 import Pop from "../utils/Pop.js";
 import { housesService } from "../services/HousesService.js";
 import { jobsService } from "../services/JobsService.js";
+import HouseCard from "../components/HouseCard.jsx";
+import JobCard from "../components/JobCard.jsx";
 
   function HomePage() {
 
@@ -15,24 +17,6 @@ import { jobsService } from "../services/JobsService.js";
       }
       catch (error){
         Pop.error(error.message, 'Getting Cars');
-      }
-    }
-
-    async function getHouses(){
-      try {
-        await housesService.getHouses()
-      }
-      catch (error){
-        Pop.error(error);
-      }
-    }
-
-    async function getJobs(){
-      try {
-        await jobsService.getJobs()
-      }
-      catch (error){
-        Pop.error(error);
       }
     }
   
@@ -49,10 +33,19 @@ import { jobsService } from "../services/JobsService.js";
       <div className="bricks">
         {cars.map(car => (
           <div key={car.id}>
-        <CarCard car={car}/>
-        </div>
+            <CarCard car={car}/>
+          </div>
           ))}
-
+        {houses.map(house => (
+          <div key={house.id}>
+            <HouseCard house={house}/>
+          </div>
+        ))}
+        {jobs.map(job => (
+          <div key={job.id}>
+            <JobCard job={job}/>
+          </div>
+        ))}
       </div>
     </div>
   )

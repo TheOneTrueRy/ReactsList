@@ -1,6 +1,26 @@
 import React from "react";
+import { housesService } from "../services/HousesService.js";
+import Pop from "../utils/Pop.js";
+import { jobsService } from "../services/JobsService.js";
 
 export function Navbar() {
+  async function getHouses(){
+    try {
+      await housesService.getHouses()
+    }
+    catch (error){
+      Pop.error(error);
+    }
+  }
+
+  async function getJobs(){
+    try {
+      await jobsService.getJobs()
+    }
+    catch (error){
+      Pop.error(error);
+    }
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 elevation-2">
       <div className="d-flex align-items-center">
@@ -23,6 +43,19 @@ export function Navbar() {
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav me-auto">
           <li>
+            <span>
+              Cars
+            </span>
+          </li>
+          <li>
+            <span>
+              Houses
+            </span>
+          </li>
+          <li>
+            <span>
+              Jobs
+            </span>
           </li>
         </ul>
       </div >

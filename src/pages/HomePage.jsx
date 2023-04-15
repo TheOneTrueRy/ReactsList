@@ -29,7 +29,7 @@ import JobCard from "../components/JobCard.jsx";
   const jobs = AppState.jobs
 
   return (
-    <div className="container-fluid mt-2">
+    <div className="container-fluid mt-2 mb-4">
       <div className="bricks">
         {cars.map(car => (
           <div key={car.id}>

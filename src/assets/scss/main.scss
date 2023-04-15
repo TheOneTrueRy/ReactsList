@@ -42,10 +42,14 @@ form:invalid button[type="submit"] {
 }
 
 .bricks{
-  columns: 3;
+  columns: 1;
   &>div{
     margin-bottom: 1.5em;
   }
+}
+
+.mobile-margin{
+  margin-top: 1em;
 }
 
 @media screen and (min-width: 768px) {
@@ -54,6 +58,11 @@ form:invalid button[type="submit"] {
     &>div{
       margin-bottom: 1.5em;
     }
+  }
+
+  .mobile-margin{
+    margin-top: 0;
+    margin-left: 1em;
   }
 }
 

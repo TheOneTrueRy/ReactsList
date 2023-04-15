@@ -41,7 +41,7 @@ export function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarText">
-        <ul className="navbar-nav me-auto">
+        {/* <ul className="navbar-nav me-auto">
           <li>
             <span>
               Cars
@@ -57,7 +57,28 @@ export function Navbar() {
               Jobs
             </span>
           </li>
-        </ul>
+        </ul> */}
+        <div>
+          <button className="btn btn-dark mobile-margin">
+            <span>
+              Cars
+            </span>
+          </button>
+        </div>
+        <div>
+          <button className="btn btn-dark mobile-margin">
+            <span>
+              Houses
+            </span>
+          </button>
+        </div>
+        <div>
+          <button className="btn btn-dark mobile-margin">
+            <span>
+              Jobs
+            </span>
+          </button>
+        </div>
       </div >
     </nav >
   )

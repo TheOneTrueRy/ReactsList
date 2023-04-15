@@ -4,7 +4,6 @@ import { Navbar } from './components/Navbar.jsx'
 
 
 export function App() {
-
   return (
     <div className="App" id="app">
       <header>
@@ -14,7 +13,6 @@ export function App() {
       <main>
         <Outlet />
       </main>
-
     </div>
   )
 }

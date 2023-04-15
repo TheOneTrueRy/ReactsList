@@ -7,6 +7,7 @@ class HousesService{
   async getHouses() {
     AppState.cars = []
     AppState.jobs = []
+    AppState.displaying = 'houses'
     const res = await api.get('houses')
     AppState.houses = res.data.map(h => new House(h))
   }

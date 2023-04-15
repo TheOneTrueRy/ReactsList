@@ -4,8 +4,6 @@ import { AppState } from "../AppState.js";
 import CarCard from "../components/CarCard.jsx";
 import { carsService } from "../services/CarsService.js";
 import Pop from "../utils/Pop.js";
-import { housesService } from "../services/HousesService.js";
-import { jobsService } from "../services/JobsService.js";
 import HouseCard from "../components/HouseCard.jsx";
 import JobCard from "../components/JobCard.jsx";
 
@@ -27,6 +25,7 @@ import JobCard from "../components/JobCard.jsx";
   const cars = AppState.cars
   const houses = AppState.houses
   const jobs = AppState.jobs
+  const displaying = AppState.displaying
 
   return (
     <div className="container-fluid mt-2 mb-4">
@@ -47,6 +46,26 @@ import JobCard from "../components/JobCard.jsx";
           </div>
         ))}
       </div>
+      <div className="fixed-bottom pb-1 pe-2 text-end">
+        {displaying == 'cars' && 
+          <button className="btn btn-success">
+            <span className="fs-5">
+              List A Car 🚗
+            </span>
+          </button>}
+        {displaying == 'houses' && 
+          <button className="btn btn-success">
+            <span className="fs-5">
+              List A House 🏡
+            </span>  
+          </button>}
+        {displaying == 'jobs' && 
+          <button className="btn btn-success">
+            <span className="fs-5">
+              List A Job 👷
+            </span>  
+          </button>}
+        </div>
     </div>
   )
 }

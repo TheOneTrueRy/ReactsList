@@ -6,7 +6,7 @@ export default function HouseCard({house}){
     <div className="rounded elevation-2">
       <img src={house.imgUrl} className="img-fluid rounded w-100 relative"/>
       <div className="px-1 py-1 absolute">
-        <span className="text-light text-shadow">
+        <span className="text-light text-shadow fs-5">
         {house.bedrooms} Bed. {house.bathrooms} Bath. - ${house.price}
         </span>
       </div>

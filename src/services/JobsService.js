@@ -7,6 +7,7 @@ class JobsService{
   async getJobs() {
     AppState.cars = []
     AppState.houses = []
+    AppState.displaying = 'jobs'
     const res = await api.get('jobs')
     AppState.jobs = res.data.map(j => new Job(j))
   }

@@ -11,6 +11,11 @@ class CarsService{
     const res = await api.get('cars')
     AppState.cars = res.data.map(c => new Car(c))
   }
+
+  async createCar(carData){
+    const res = await api.post('cars', carData)
+    AppState.cars.push(new Car(res.data))
+  }
 }
 
 export const carsService = new CarsService()

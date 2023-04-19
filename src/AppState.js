@@ -11,6 +11,9 @@ class ObservableAppState {
   /** @type {import('./models/Car.js').Car[]} */
   cars = []
 
+  /** @type {import('./models/Car.js').Car} */
+  car = null
+
   /** @type {import('./models/House.js').House[]} */
   houses = []
 
